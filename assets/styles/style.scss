@@ -7,7 +7,6 @@
 
 
 @import 'normalize';
-@import 'fonts';
 @import 'mixins';
 @import 'font-awesome/font-awesome';
 
@@ -15,7 +14,7 @@
  * Variables
  */
 
-$brand:             rgb(8, 172, 105);
+$brand:             rgb(62, 96, 113);
 $brandLight:        lighten($brand, 20);
 $brandLighter:      lighten($brand, 60);
 $brandDark:         darken($brand, 5);
@@ -67,7 +66,7 @@ th, td {
 html, body, .application-container { height: 100%; width: 100%; overflow: hidden; }
 
 body {
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
     font-size: 14px;
     -webkit-font-smoothing:antialiased;
 }

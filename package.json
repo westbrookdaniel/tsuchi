@@ -1,7 +1,7 @@
 {
-  "name": "notification-catcher",
-  "description": "Web Interface for reading and testing notifications during development",
-  "version": "1.2.1",
+  "name": "tsuchi",
+  "description": "Reading and test notifications during development",
+  "version": "1.0.0",
   "keywords": [
     "notification",
     "email",
@@ -12,6 +12,7 @@
     "voice",
     "notification testing",
     "notification catcher",
+    "tsuchi",
     "e-mail",
     "mail",
     "maildev",
@@ -22,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/notifme/catcher.git"
+    "url": "https://github.com/westbrookdaniel/tsuchi.git"
   },
   "scripts": {
     "build": "grunt build",
@@ -33,9 +34,7 @@
     "css-watch": "node-sass -wr --output-style compressed -o app/styles assets/styles/style.scss"
   },
   "main": "./index.js",
-  "bin": {
-    "notification-catcher": "./bin/maildev"
-  },
+  "bin": "./bin/maildev",
   "license": "MIT",
   "dependencies": {
     "async": "1.5.1",
@@ -44,7 +43,7 @@
     "mailparser": "0.6.2",
     "open": "0.0.5",
     "smtp-connection": "2.3.1",
-    "smtp-server": "1.16.1",
+    "smtp-server": "^3.13.2",
     "socket.io": "1.7.3",
     "wildstring": "1.0.8"
   },
@@ -62,17 +61,18 @@
     "istanbul": "^0.4.5",
     "matchdep": "^1.0.1",
     "mocha": "^3.3.0",
-    "node-sass": "^4.5.2",
+    "node-sass": "^9.0.0",
     "nodemailer": "2.3.0",
     "nodemon": "^1.11.0",
     "standard": "^10.0.2"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=18.0.0"
   },
   "standard": {
     "ignore": [
       "app/components/"
     ]
-  }
+  },
+  "packageManager": "yarn@3.8.0"
 }
