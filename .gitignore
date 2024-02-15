@@ -1,0 +1,13 @@
+.DS_Store
+.sass-cache
+node_modules
+coverage
+dist
+.zip
+maildev-*
+settings.json
+*.sublime-*
+.nodemonignore
+
+# Ignore npm debug log
+npm-debug.log

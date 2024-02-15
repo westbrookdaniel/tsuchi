@@ -1,0 +1,96 @@
+<ul class="toolbar email-toolbar on-light">
+  <li>
+    <a href="" class=""
+      ng-click="show('desktop')"
+      ng-class="{ active: panelVisibility == 'desktop' }">
+        <i class="fa fa-desktop"></i>
+        Desktop
+    </a>
+  </li>
+  <li>
+    <a href="" class=""
+      ng-hide="true"
+      ng-click="show('mobile')"
+      ng-class="{ active: panelVisibility == 'mobile' }">
+        <i class="fa fa-mobile"></i>
+        Mobile
+    </a>
+  </li>
+  <li>
+    <a href="" class=""
+      ng-click="show('json')"
+      ng-class="{ active: panelVisibility == 'json' }">
+        <i class="fa fa-code"></i>
+        Source
+    </a>
+  </li>
+  <li>
+    <a href="" class=""
+      ng-click="play()">
+        <i class="fa fa-play"></i>
+        Play
+    </a>
+  </li>
+  <li>
+    <a href="" class=""
+      ng-click="delete(item)">
+        <i class="fa fa-trash-o"></i>
+        Delete
+    </a>
+  </li>
+</ul>
+
+<div class="email-content webpush-content">
+    <div ng-hide=" panelVisibility != 'json' ">
+      <pre>{{payloadSrc | json}}</pre>
+    </div>
+
+    <div ng-hide=" panelVisibility != 'desktop' " class="desktop">
+      <div class="push">
+        <div ng-class="{ chrome: true, 'with-image': !!payload.image }">
+          <div class="main">
+            <div class="img-css" style="background-image: url('{{payload.icon}}');"></div>
+            <div class="body">
+              <div class="title">
+                <span id="push-payload-title">{{payload.title}}</span>
+                <i class="fa fa-close"></i>
+              </div>
+              <div class="content" id="push-payload-content">{{payload.body}}</div>
+            </div>
+          </div>
+          <div class="image" ng-show="!!payload.image">
+            <div class="img-css" style="background-image: url('{{payload.image}}');"></div>
+          </div>
+          <footer>
+            <div class="action" ng-repeat="action in payload.actions">
+              <div style="background-image: url('{{action.icon}}');" class="img-css"
+                ng-show="!!action.icon"></div>
+              <span class="title">{{action.title}}</span>
+            </div>
+          </footer>
+        </div>
+
+        <div ng-class="{ firefox: true, 'with-icon': !!payload.icon }">
+          <div class="logo"><i class="fa-firefox fa"></i></div>
+          <div class="main">
+            <div class="title">{{payload.title}}</div>
+            <div class="via">via ----</div>
+            <div class="body">{{payload.body}}</div>
+          </div>
+          <div class="icon">
+            <div class="img-css" style="background-image: url('{{payload.icon}}');"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-hide=" panelVisibility != 'mobile' " class="mobile">
+      <div class="marvel-device nexus5">
+        <div class="top-bar"></div>
+        <div class="sleep"></div>
+        <div class="volume"></div>
+        <div class="camera"></div>
+        <div class="screen">{{payload.body}}</div>
+      </div>
+    </div>
+</div>
