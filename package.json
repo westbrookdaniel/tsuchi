@@ -26,10 +26,9 @@
     "url": "https://github.com/westbrookdaniel/tsuchi.git"
   },
   "scripts": {
-    "build": "grunt build",
-    "test": "standard && istanbul cover _mocha",
-    "lint": "standard",
-    "dev": "node ./scripts/dev.js & npm run css-watch",
+    "build": "yarn css",
+    "test": "istanbul cover _mocha",
+    "dev": "node ./scripts/dev.js & yarn css-watch",
     "css": "node-sass --output-style compressed -o app/styles assets/styles/style.scss",
     "css-watch": "node-sass -wr --output-style compressed -o app/styles assets/styles/style.scss"
   },
@@ -50,21 +49,12 @@
   "devDependencies": {
     "expect": "1.20.2",
     "got": "^6.7.1",
-    "grunt": "0.4.5",
-    "grunt-cli": "^1.2.0",
-    "grunt-concurrent": "2.2.1",
-    "grunt-contrib-jshint": "1.0.0",
-    "grunt-contrib-watch": "1.0.0",
-    "grunt-nodemon": "0.4.1",
-    "grunt-sass": "1.1.0",
     "http-proxy-middleware": "0.12.0",
     "istanbul": "^0.4.5",
-    "matchdep": "^1.0.1",
     "mocha": "^3.3.0",
     "node-sass": "^9.0.0",
     "nodemailer": "2.3.0",
-    "nodemon": "^1.11.0",
-    "standard": "^10.0.2"
+    "nodemon": "^1.11.0"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -74,5 +64,5 @@
       "app/components/"
     ]
   },
-  "packageManager": "yarn@3.8.0"
+  "packageManager": "yarn@4.1.0"
 }
